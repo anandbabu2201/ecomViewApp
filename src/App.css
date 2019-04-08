@@ -1,0 +1,309 @@
+/* common css */
+
+body {
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 14px;
+  outline: none;
+  color: #060006;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  display: flex;
+  outline: none;
+  flex-shrink: 0;
+  flex-direction: row;
+  background: gainsboro
+}
+
+/* icon related style */
+
+.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.icon::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-position: center center;
+}
+
+/* menu css */
+
+.leftMenu {
+    font-weight: 400;
+    font-size: 13px;
+    z-index: 85;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    color: #FFF;
+    border: 1px solid #DFE3E7;
+    overflow: auto;
+    background-color: rgb(251, 251, 252);
+    box-shadow: rgba(146, 161, 175, 0.06) -4px 5px 7px 0px inset;
+    float: left;
+    display: block;
+    height: 100vh;
+    width: 240px;
+    padding: 10px;
+}
+
+/* button css */
+.link {
+    font-weight: normal;
+    background: transparent;
+    border: none;
+    height: 21px;
+    font-size: 12px;
+    text-transform: capitalize;
+    line-height: 21px;
+    cursor: pointer;
+    box-shadow: none;
+    outline: none
+}
+
+.link:hover {
+  color: #007BA6;
+  background-color: transparent;
+}
+
+.link:active {
+  color: #18A3D2;
+  background-color: transparent;
+}
+
+.link.selectedLink {
+  color: #18A3D2;
+  background-color: transparent;
+}
+
+.search-icon::before {
+  background-image: url('./assets/search-icon.svg');
+}
+
+.download-button::before {
+  background-image: url('./assets/download-button.svg');
+}
+
+
+.icon.download-button {
+  padding-left: 20px;
+}
+
+.sort-up-down::before {
+  background-image: url('./assets/sort-up-down.svg');
+}
+
+.blue-tick::before {
+  background-image: url('./assets/blue-tick.svg');
+}
+
+/* sort drop down */
+
+.compFilterDropdownSelector {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.compFilterDropdownSelector .filterDropdownSelectorContainer{
+  position: relative;
+}
+
+
+.compFilterDropdownSelector .filterDropdownSelectorContainer .filterDropdownSelectorItemsContainer{
+  position: absolute;
+  display: none;
+  width: 200px;
+  background-color: #ffffff;
+  font-size:12px;
+  left:-50px
+}
+
+.compFilterDropdownSelector .filterDropdownSelectorContainer .filterDropdownSelectorItemsContainer.show{
+  display: block;
+  border: 1px solid #DFE3E7;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 42;
+  padding : 10px 5px 10px 10px;
+}
+
+.compFilterDropdownSelector .filterDropdownSelectorContainer .filterDropdownSelectorItemsContainer .filterDropdownSelectorItem{
+  padding: 5px;
+  cursor: pointer;
+}
+
+.compFilterDropdownSelector .filterDropdownSelectorContainer .filterDropdownSelectorItemsContainer .filterDropdownSelectorItem.selectedOption{
+ color: #1296C2;	
+}
+
+/* second view */
+
+.searchActions {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #F4F5F7;
+  border-right: 1px solid #F4F5F7;
+  background-color: #E9ECEF;
+  height: 30px
+}
+
+.searchActions > *{
+  padding: 10px
+}
+
+input {
+  width: 100%;
+    background-color: transparent;
+    border: none;
+    margin-top: 5px;
+    outline: none
+}
+
+.cardsView {
+  background-color: #E9ECEF;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+}
+
+
+/* image component */
+
+.eachImage {
+  width:50px;
+  height: 50px;
+  padding: 10px;
+  box-shadow: 1px 2px 1px 1px rgba(146,161,175,0.08);
+  border: 1px solid #cccc
+}
+
+.biggerImage{
+  width:200px;
+  height: 200px;
+}
+
+/* cards component */
+
+.cardsLayout {
+  overflow: scroll;
+  height: calc(100vh - 40px);
+}
+
+ .cardBody {
+  border: 1px solid #F4F5F7;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  padding: 15px 10px 10px 20px;
+  margin: 20px;
+  margin-bottom: 8px;
+  border: 1px solid #E5E5E5;
+  display: flex;
+  cursor: pointer;
+}
+
+.selectedCard {
+  margin: 20px 10px 20px 10px;
+  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+}
+
+.leftGrid {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.leftGrid > *{
+  padding : 3px
+}
+.rightGrid {
+  flex: 0.5;
+  align-self: center;
+}
+
+/* card Detailed View */
+
+.cardDetailedView {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  padding: 30px;
+  margin: 15px;
+  margin-bottom: 8px;
+  border: 1px solid #E5E5E5;
+  box-shadow: 1px 2px 8px 0 rgba(127,136,142,0.08);
+  height: 400px;
+ 
+}
+
+.load-more {
+  display: block;
+  margin: 1em auto;
+  padding: 0.75em 1em;
+  font-size: 1em;
+  outline: none;
+  background-color: #ffff;
+  border: 1px solid blue;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4)
+}
+
+.leftDetailsGrid {
+  display: flex;
+  flex: 0.5;
+}
+
+.rightDetailsGrid{
+  display: flex;
+  border-bottom: 1px solid #D3D1D0;
+  height: 100px;
+}
+
+.eachRightGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eachRightGrid > * {
+  padding: 10px 15px 10px 15px
+}
+
+
+.leftBorder::before{
+  content:'';
+  border-right: 1px solid #E9ECEF;
+  padding-top: 0px;
+  padding-bottom: 4.5em;
+}
+.rightBorder:after{
+  content:'';
+  border-right: 1px solid #E9ECEF;
+  padding-top: 0px;
+  padding-bottom: 4em;
+}
+
+.secondDetailGrid{
+  display: flex
+}
+
